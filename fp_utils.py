@@ -32,6 +32,10 @@ class Collection:
             f(item)
         # To allow chaining
         return self
+    
+    def comment(self, comment):
+        # Just allow chaining
+        return self
         
     def getValue(self):
         return self.val

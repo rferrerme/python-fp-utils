@@ -1,8 +1,6 @@
 # python-fp-utils
 
-_Natural Functional Programming in Python._
-
-___
+_More natural Functional Programming in Python._
 
 Python has some built-in functions like `map`, `reduce` and `filter` to enable some basic Functional Programming.
 
@@ -26,6 +24,7 @@ Although that is concise and clear, it is not natural enough. What `Collection` 
 >>> print Collection(range(0, 11)) \
 ...     .filter(lambda x: x%2==0) \
 ...     .map(lambda x: x*10) \
+...     .comment("Sort descending") \
 ...     .apply(lambda list: sorted(list, reverse=True)) \
 ...     .getValue()
 [100, 80, 60, 40, 20, 0]
@@ -43,9 +42,11 @@ Although that is concise and clear, it is not natural enough. What `Collection` 
 
 `flatMap(func)`: same as `map(func)` but it flattens the result one level
 
-`parallelMap(func, [maxConcurrency])`: same as `map(func)` but performing it in parallel according to an optional `maxConcurrency` value
+`parallelMap(func, [maxConcurrency])`: same as `map(func)` but performing it in parallel according to an optional `maxConcurrency` value (note: in Python 2 lambdas are not picklable so they cannot be used here)
 
 `forEach(func)`: applies `func` (effect) to each collection item (the original collection is returned unmodified to preserve chaining)
+
+`comment(text)`: only useful to document the code
 
 `getValue()`: returns the wrapped collection value
 

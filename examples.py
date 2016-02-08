@@ -8,6 +8,7 @@ from fp_utils import Collection
 print Collection(range(0, 11)) \
     .filter(lambda x: x%2==0) \
     .map(lambda x: x*10) \
+    .comment("Sort descending") \
     .apply(lambda list: sorted(list, reverse=True)) \
     .getValue()
 
