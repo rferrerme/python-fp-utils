@@ -40,6 +40,8 @@ Although that is concise and clear, it is not natural enough. What `Collection` 
 
 `map(func)`: performs a map operation on the collection items using `func`
 
+`mapGenerator(func)`: performs a map operation on the items using `func` when the collection is actually a generator
+
 `flatMap(func)`: same as `map(func)` but it flattens the result one level
 
 `parallelMap(func, [maxConcurrency])`: same as `map(func)` but performing it in parallel according to an optional `maxConcurrency` value (note: in Python 2 lambdas are not picklable so they cannot be used here)
